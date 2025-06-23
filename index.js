@@ -29,9 +29,7 @@ app.use(express.json());
 app.use(function(req, res, next) {
   // Allow specific origins or use "*" for any origin
   const allowedOrigins = [
-    'https://client-6i8iqnepg-akhashcs24s-projects.vercel.app',
-    'https://client-qu0ey0h2i-akhashcs24s-projects.vercel.app',
-    'https://client-izlts6arf-akhashcs24s-projects.vercel.app',
+    'https://client-iota-two-14.vercel.app', // Stable project URL - won't change
     'http://localhost:3000',
     'http://localhost:3001'
   ];
@@ -58,7 +56,16 @@ app.use(function(req, res, next) {
 });
 
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, '../client/dist')));
+
+// Only serve static files if client/dist exists (for development)
+const clientDistPath = path.join(__dirname, '../client/dist');
+const fs = require('fs');
+if (fs.existsSync(clientDistPath)) {
+  console.log('📁 Serving static files from client/dist');
+  app.use(express.static(clientDistPath));
+} else {
+  console.log('📁 Client dist directory not found - running as API-only backend');
+}
 
 // Simple in-memory cache for market data
 const marketDataCache = {
