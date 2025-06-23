@@ -29,11 +29,13 @@ app.use(express.json());
 app.use(function(req, res, next) {
   // Allow specific origins or use "*" for any origin
   const allowedOrigins = [
-    'https://client-6u4laigih-akhashcs24s-projects.vercel.app', // Latest deployment with enhanced trade tracking
-    'https://client-4198m9i51-akhashcs24s-projects.vercel.app', // Previous deployment URL with HMA fix
-    'https://client-is7sn29fg-akhashcs24s-projects.vercel.app', // Previous deployment URL
-    'https://client-akhashcs24-akhashcs24s-projects.vercel.app', // Current stable project URL
-    'https://client-iota-two-14.vercel.app', // Previous stable URL (backup)
+    'https://client-krfqnqb65-akhashcs24s-projects.vercel.app', // Latest deployment with auto-monitoring features
+    'https://client-6i8iqnepg-akhashcs24s-projects.vercel.app',
+    'https://client-qu0ey0h2i-akhashcs24s-projects.vercel.app',
+    'https://client-izlts6arf-akhashcs24s-projects.vercel.app',
+    'https://client-cr5w8anek-akhashcs24s-projects.vercel.app',
+    'https://client-q5s7dtxpi-akhashcs24s-projects.vercel.app',
+    'https://client-dkydevmtr-akhashcs24s-projects.vercel.app',
     'http://localhost:3000',
     'http://localhost:3001'
   ];
