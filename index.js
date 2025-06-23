@@ -29,6 +29,7 @@ app.use(express.json());
 app.use(function(req, res, next) {
   // Allow specific origins or use "*" for any origin
   const allowedOrigins = [
+    'https://client-is7sn29fg-akhashcs24s-projects.vercel.app', // Latest deployment URL
     'https://client-akhashcs24-akhashcs24s-projects.vercel.app', // Current stable project URL
     'https://client-iota-two-14.vercel.app', // Previous stable URL (backup)
     'http://localhost:3000',
